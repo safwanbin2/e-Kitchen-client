@@ -17,7 +17,9 @@ const Myreviews = () => {
     return (
         <div className='min-h-screen'>
             <h2 className='text-center text-2xl font-semibold my-6'>Reviews you have given</h2>
-            <table className='table w-10/12 mx-auto'>
+            {
+                myReviews.length ? 
+                <table className='table w-10/12 mx-auto'>
                 <tbody>
                     {
                         myReviews.map(review => <TableItem
@@ -27,6 +29,8 @@ const Myreviews = () => {
                     }
                 </tbody>
             </table>
+            : <h2 className='text-center text-2xl mt-32'>No reviews were added</h2>
+            }
         </div>
     );
 };

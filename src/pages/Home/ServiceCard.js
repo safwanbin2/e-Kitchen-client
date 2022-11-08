@@ -16,7 +16,10 @@ const ServiceCard = ({ service }) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
-                <p>{description.slice(0, 60)}...</p>
+                <p>{
+                    description.length > 100 ? description.slice(0, 80)
+                        : description
+                }...</p>
                 <h3>Price: <span className='text-xl'>{price}</span>tk</h3>
                 <div className="rating">
                     <h2 className='text-lg mr-2'>{rating}</h2>

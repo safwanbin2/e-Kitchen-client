@@ -8,7 +8,7 @@ const Details = () => {
     return (
         <div>
             <SingleDetail service={service}></SingleDetail>
-            <Reviews></Reviews>
+            <Reviews service={service}></Reviews>
         </div>
     );
 };

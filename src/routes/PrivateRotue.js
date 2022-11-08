@@ -6,7 +6,7 @@ const PrivateRotue = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     if (loading) {
-        return <progress className="progress text-center mt-20 w-56"></progress>;
+        return <div className='text-center'><progress className="progress text-center my-32 w-56"></progress></div>;
     }
     if (user) {
         return children;

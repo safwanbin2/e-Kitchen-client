@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
     const { logIn, logInWithGoogle } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -15,6 +19,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true })
             })
             .catch(err => console.error(err));
     }
@@ -23,6 +28,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 console.error(err)

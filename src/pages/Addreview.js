@@ -12,7 +12,9 @@ const Addreview = ({ service }) => {
         const newReview = {
             name: user.displayName,
             email: user.email,
+            serviceTitle: service.title,
             serviceId: service._id,
+            serviceImg: service.img,
             rating: rating,
             body: body,
             img: user.photoURL

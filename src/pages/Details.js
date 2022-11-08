@@ -1,12 +1,14 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Reviews from './Reviews';
+import SingleDetail from './SingleDetail';
 
 const Details = () => {
     const service = useLoaderData();
-    console.log(service)
     return (
         <div>
-            ths is service detailss
+            <SingleDetail service={service}></SingleDetail>
+            <Reviews></Reviews>
         </div>
     );
 };

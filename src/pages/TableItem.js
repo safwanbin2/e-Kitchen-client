@@ -6,21 +6,24 @@ const TableItem = ({ review, setRefresh, refresh }) => {
     const { serviceTitle, _id, serviceImg, rating, body } = review;
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
-            method: "DELETE",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.deletedCount) {
-                    setRefresh(!refresh)
-                    toast.success('Deleted Successfully')
-                }
-                else {
-                    toast.error('Could not Delete')
-                }
+        const confirm = window.confirm('Are you sure you want to delete the review?')
+        if (confirm) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: "DELETE",
             })
-            .catch(err => console.error(err))
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount) {
+                        setRefresh(!refresh)
+                        toast.success('Deleted Successfully')
+                    }
+                    else {
+                        toast.error('Could not Delete')
+                    }
+                })
+                .catch(err => console.error(err))
+        }
     }
     return (
         <tr>

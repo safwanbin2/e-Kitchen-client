@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useTitle from '../hooks/useTitle';
 import TableItem from './TableItem';
 
 const Myreviews = () => {
@@ -14,7 +15,7 @@ const Myreviews = () => {
     }, [user?.email, refresh])
 
     console.log(myReviews)
-
+    useTitle('Myreviews')
     return (
         <div className='min-h-screen'>
             <h2 className='text-center text-2xl font-semibold my-6'>Reviews you have given</h2>

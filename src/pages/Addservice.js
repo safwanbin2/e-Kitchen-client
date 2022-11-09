@@ -1,7 +1,9 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../hooks/useTitle';
 
 const Addreviews = () => {
+    useTitle('Add service')
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;

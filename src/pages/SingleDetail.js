@@ -6,8 +6,8 @@ const SingleDetail = ({ service }) => {
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row items-start">
-                    <img src={img} alt="" className="w-6/12 rounded-lg shadow-2xl" />
-                    <div className='w-6/12'>
+                    <img src={img} alt="" className="md:w-6/12 rounded-lg shadow-2xl" />
+                    <div className='md:w-6/12'>
                         <h1 className="text-3xl font-bold">{title}</h1>
                         <h3>Price: <span className='text-xl'>{price}</span>tk</h3>
                         <div className="rating">

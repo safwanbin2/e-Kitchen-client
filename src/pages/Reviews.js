@@ -17,7 +17,7 @@ const Reviews = ({ service }) => {
 
     console.log(reviews)
     return (
-        <div className='w-8/12 mx-auto my-14'>
+        <div className='w-10/12 md:w-8/12 mx-auto my-14'>
             <h2 className='text-2xl font-semibold text-center'>What people thinks about the food</h2>
             {
                 reviews.length ?

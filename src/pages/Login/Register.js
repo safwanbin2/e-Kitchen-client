@@ -8,6 +8,7 @@ import useTitle from '../../hooks/useTitle';
 const Register = () => {
     const { logInWithGoogle, createUser, update } = useContext(AuthContext);
     useTitle('Register')
+    // handling form
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -33,6 +34,7 @@ const Register = () => {
                 .catch(err => console.error(err));
         }
     }
+    // handling button click
     const handleGoogle = () => {
         logInWithGoogle()
             .then(result => {

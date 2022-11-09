@@ -8,6 +8,7 @@ import Register from "../pages/Login/Register";
 import Myreviews from "../pages/Myreviews";
 import Addservice from "../pages/Addservice";
 import PrivateRotue from "./PrivateRotue";
+import BLog from "../pages/BLog";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: '/addservice',
                 element: <PrivateRotue><Addservice></Addservice></PrivateRotue>
+            },
+            {
+                path: '/blog',
+                element: <BLog></BLog>
             }
         ]
     }

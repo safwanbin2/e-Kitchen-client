@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
-const Addreview = ({ service }) => {
+const Addreview = ({ service, refresh, setRefresh }) => {
 
     const { user } = useContext(AuthContext);
     const handleAddReview = (e) => {
@@ -28,7 +29,17 @@ const Addreview = ({ service }) => {
             body: JSON.stringify(newReview)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Review added successfully')
+                    setRefresh(!refresh)
+                    e.target.reset();
+                }
+                else {
+                    toast.error('Could not add review')
+                }
+            })
             .catch(err => console.error(err));
     }
     return (

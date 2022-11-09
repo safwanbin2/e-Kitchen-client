@@ -1,7 +1,8 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { FaEdit, FaStar, FaTrash } from 'react-icons/fa';
 
-const TableItem = ({ review }) => {
+const TableItem = ({ review, setRefresh, refresh }) => {
     const { serviceTitle, _id, serviceImg, rating, body } = review;
 
     const handleDelete = (id) => {
@@ -9,7 +10,16 @@ const TableItem = ({ review }) => {
             method: "DELETE",
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount) {
+                    setRefresh(!refresh)
+                    toast.success('Deleted Successfully')
+                }
+                else {
+                    toast.error('Could not Delete')
+                }
+            })
             .catch(err => console.error(err))
     }
     return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const Addreviews = () => {
     const handleSubmit = (e) => {
@@ -26,7 +27,16 @@ const Addreviews = () => {
             body: JSON.stringify(newService)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Successfully added Dish')
+                    form.reset();
+                }
+                else{
+                    toast.error('could not add the dish')
+                }
+            })
             .catch(err => console.error(err))
     }
     return (

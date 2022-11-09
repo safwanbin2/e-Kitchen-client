@@ -6,7 +6,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => { localStorage.removeItem('eKitchen-token') })
             .catch(err => console.error(err))
     }
 

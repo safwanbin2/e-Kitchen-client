@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -19,6 +20,8 @@ const Register = () => {
                 const user = result.user;
                 updateUser(name);
                 console.log(user)
+                form.reset();
+                toast.success('Account Created Successfully')
             })
             .catch(err => {
                 console.error(err)

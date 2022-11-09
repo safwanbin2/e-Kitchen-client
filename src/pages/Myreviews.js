@@ -8,7 +8,11 @@ const Myreviews = () => {
     const [myReviews, setMyReviews] = useState([]);
     const [refresh, setRefresh] = useState(true);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('eKitchen-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setMyReviews(data))
             .catch(err => console.error(err))

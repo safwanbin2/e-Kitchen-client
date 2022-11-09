@@ -48,11 +48,11 @@ const TableItem = ({ review, setRefresh, refresh }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.matchedCount){
+                if (data.matchedCount) {
                     window.location.reload();
                     toast.success('Updated Successfully')
                 }
-                else{
+                else {
                     toast.error('Failed to update')
                 }
             })
@@ -60,7 +60,7 @@ const TableItem = ({ review, setRefresh, refresh }) => {
     }
     return (
         <>
-            <tr>
+            <tr className='flex flex-col md:flex-row md:justify-between w-full mb-12'>
                 <td>
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
@@ -75,7 +75,10 @@ const TableItem = ({ review, setRefresh, refresh }) => {
                     </div>
                 </td>
                 <td>
-                    {body}
+                    {
+                        body.length > 30 ? <>{body.slice(0, 30)}...</>
+                            : body
+                    }
                 </td>
                 <td className='text-xl flex'>
                     <button onClick={() => handleDelete(_id)}><FaTrash></FaTrash></button>

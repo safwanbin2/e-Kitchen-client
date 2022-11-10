@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'services-all',
-                loader: () => fetch(`http://localhost:5000/services?limit=${0}`),
+                // loader: () => fetch(`http://localhost:5000/services?limit=${0}`),
                 element: <AllServices></AllServices>
             },
             {

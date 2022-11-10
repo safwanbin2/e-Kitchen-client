@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
+    const [toggle, setToggle] = useState(false);
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -45,7 +46,7 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const authInfo = { user, createUser, logInWithGoogle, logIn, update, logOut, loading }
+    const authInfo = { user, createUser, logInWithGoogle, logIn, update, logOut, loading, toggle, setToggle }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

@@ -42,7 +42,7 @@ const Addreviews = () => {
             .catch(err => console.error(err))
     }
     return (
-        <div className='min-h-screen bg-base-200'>
+        <div className='min-h-screen bg-base-200 flex justify-center items-center'>
             <form onSubmit={handleSubmit} className='w-10/12 mx-auto py-12'>
                 <input type="text" placeholder="Service Name" className="input input-bordered w-full my-1" name='title' required />
                 <div className=' my-1'>

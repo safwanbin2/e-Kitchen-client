@@ -8,7 +8,7 @@ const TableItem = ({ review, setRefresh, refresh }) => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are you sure you want to delete the review?')
         if (confirm) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/reviews/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -38,7 +38,7 @@ const TableItem = ({ review, setRefresh, refresh }) => {
         }
 
         console.log(updateBody)
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/reviews/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

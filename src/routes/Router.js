@@ -19,12 +19,12 @@ const router = createBrowserRouter([
             },
             {
                 path: 'services-all',
-                // loader: () => fetch(`http://localhost:5000/services?limit=${0}`),
+                // loader: () => fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/services?limit=${0}`),
                 element: <AllServices></AllServices>
             },
             {
                 path: "/services/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/services/${params.id}`),
                 element: <Details></Details>
             },
             {

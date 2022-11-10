@@ -9,7 +9,7 @@ const Reviews = ({ service }) => {
     const [reviews, setReviews] = useState([]);
     const [refresh, setRefresh] = useState(true);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${service._id}`)
+        fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/reviews/${service._id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
             .catch(err => console.error(err))

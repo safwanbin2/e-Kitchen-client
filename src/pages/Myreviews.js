@@ -8,7 +8,7 @@ const Myreviews = () => {
     const [myReviews, setMyReviews] = useState([]);
     const [refresh, setRefresh] = useState(true);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('eKitchen-token')}`
             }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
@@ -8,7 +8,7 @@ const AllServices = () => {
     const [services, setServices] = useState([])
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch(`http://localhost:5000/services?limit=${0}`)
+        fetch(`https://b6a11-service-review-server-side-safwanbin2.vercel.app/services?limit=${0}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)
